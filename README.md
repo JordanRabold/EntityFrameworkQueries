@@ -3,7 +3,7 @@
 ## Getting Started 
 - VS 2022
 - .NET 6
-- AP Database Installed
+- AP database installed
 
 You may need to change the DB connection string located in the APcontext class
 By default it points to mssqllocaldb. If your AP script is not installed on 
