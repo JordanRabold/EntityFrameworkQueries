@@ -31,6 +31,7 @@
             this.btnSelectQuery = new System.Windows.Forms.Button();
             this.btnWhereQuery = new System.Windows.Forms.Button();
             this.btnSelectSpecificColumns = new System.Windows.Forms.Button();
+            this.btnMiscQueries = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelectQuery
@@ -63,11 +64,22 @@
             this.btnSelectSpecificColumns.UseVisualStyleBackColor = true;
             this.btnSelectSpecificColumns.Click += new System.EventHandler(this.btnSelectSpecificColumns_Click);
             // 
+            // btnMiscQueries
+            // 
+            this.btnMiscQueries.Location = new System.Drawing.Point(27, 257);
+            this.btnMiscQueries.Name = "btnMiscQueries";
+            this.btnMiscQueries.Size = new System.Drawing.Size(106, 29);
+            this.btnMiscQueries.TabIndex = 3;
+            this.btnMiscQueries.Text = "Misc.Queries";
+            this.btnMiscQueries.UseVisualStyleBackColor = true;
+            this.btnMiscQueries.Click += new System.EventHandler(this.btnMiscQueries_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMiscQueries);
             this.Controls.Add(this.btnSelectSpecificColumns);
             this.Controls.Add(this.btnWhereQuery);
             this.Controls.Add(this.btnSelectQuery);
@@ -82,5 +94,6 @@
         private Button btnSelectQuery;
         private Button btnWhereQuery;
         private Button btnSelectSpecificColumns;
+        private Button btnMiscQueries;
     }
 }

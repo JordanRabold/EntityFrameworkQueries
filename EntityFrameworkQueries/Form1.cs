@@ -11,6 +11,7 @@ namespace EntityFrameworkQueries
             InitializeComponent();
         }
 
+        // SELECT Query
         private void btnSelectAllVendors_Click(object sender, EventArgs e)
         {
             using APContext dbContext = new APContext(); // use whenever you want to interact with database
@@ -24,6 +25,7 @@ namespace EntityFrameworkQueries
                                        select v).ToList();
         }
 
+        // WHERE Query 
         private void btnWhereQuery_Click(object sender, EventArgs e)
         {
             using APContext dbContext = new(); // use whenever you want to interact with database
@@ -41,11 +43,13 @@ namespace EntityFrameworkQueries
 
         }
 
+        // SELECT SPECIFIC COLUMNS Query
         private void btnSelectSpecificColumns_Click(object sender, EventArgs e)
         {
             using APContext dbContext = new();
 
             // Anonymous type..creates new object containing select query
+            // creates new list using VendorLocation class that we made
             List<VendorLocation> results = (from v in dbContext.Vendors
                            select new VendorLocation
                            {
@@ -61,6 +65,30 @@ namespace EntityFrameworkQueries
             }
 
             MessageBox.Show(displayString.ToString());
+        }
+
+        private void btnMiscQueries_Click(object sender, EventArgs e)
+        {
+            APContext dbContext = new();
+
+            // Check if a vendor exists in Washington
+            bool doesExist = (from v in dbContext.Vendors
+                              where v.VendorState == "WA"
+                              select v).Any();
+
+            // Get number of Invoices
+            int invoiceCount = (from invoice in dbContext.Invoices
+                               select invoice).Count();
+
+            // query a simgle vendor
+            Vendor singleVendor = (from v in dbContext.Vendors
+                                   where v.VendorName == "IBM"
+                                   select v).Single();
+
+            if(singleVendor != null)
+            {
+                // Do something with the vendor object
+            }
         }
     }
 
