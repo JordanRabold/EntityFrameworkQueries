@@ -32,15 +32,16 @@
             this.btnWhereQuery = new System.Windows.Forms.Button();
             this.btnSelectSpecificColumns = new System.Windows.Forms.Button();
             this.btnMiscQueries = new System.Windows.Forms.Button();
+            this.btnVendorsAndInvoices = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelectQuery
             // 
             this.btnSelectQuery.Location = new System.Drawing.Point(27, 53);
             this.btnSelectQuery.Name = "btnSelectQuery";
-            this.btnSelectQuery.Size = new System.Drawing.Size(155, 29);
+            this.btnSelectQuery.Size = new System.Drawing.Size(184, 29);
             this.btnSelectQuery.TabIndex = 0;
-            this.btnSelectQuery.Text = "SELECT Query";
+            this.btnSelectQuery.Text = "SELECT * FROM Vendors";
             this.btnSelectQuery.UseVisualStyleBackColor = true;
             this.btnSelectQuery.Click += new System.EventHandler(this.btnSelectAllVendors_Click);
             // 
@@ -48,9 +49,9 @@
             // 
             this.btnWhereQuery.Location = new System.Drawing.Point(27, 121);
             this.btnWhereQuery.Name = "btnWhereQuery";
-            this.btnWhereQuery.Size = new System.Drawing.Size(155, 29);
+            this.btnWhereQuery.Size = new System.Drawing.Size(556, 29);
             this.btnWhereQuery.TabIndex = 1;
-            this.btnWhereQuery.Text = "WHERE Query";
+            this.btnWhereQuery.Text = "SELECT * FROM Vendors WHERE VendorState=\"CA\" ORDER BY VendorName ASC";
             this.btnWhereQuery.UseVisualStyleBackColor = true;
             this.btnWhereQuery.Click += new System.EventHandler(this.btnWhereQuery_Click);
             // 
@@ -74,11 +75,22 @@
             this.btnMiscQueries.UseVisualStyleBackColor = true;
             this.btnMiscQueries.Click += new System.EventHandler(this.btnMiscQueries_Click);
             // 
+            // btnVendorsAndInvoices
+            // 
+            this.btnVendorsAndInvoices.Location = new System.Drawing.Point(29, 325);
+            this.btnVendorsAndInvoices.Name = "btnVendorsAndInvoices";
+            this.btnVendorsAndInvoices.Size = new System.Drawing.Size(276, 29);
+            this.btnVendorsAndInvoices.TabIndex = 4;
+            this.btnVendorsAndInvoices.Text = "SELECT All Vendors with their invoices";
+            this.btnVendorsAndInvoices.UseVisualStyleBackColor = true;
+            this.btnVendorsAndInvoices.Click += new System.EventHandler(this.btnVendorsAndInvoices_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVendorsAndInvoices);
             this.Controls.Add(this.btnMiscQueries);
             this.Controls.Add(this.btnSelectSpecificColumns);
             this.Controls.Add(this.btnWhereQuery);
@@ -95,5 +107,6 @@
         private Button btnWhereQuery;
         private Button btnSelectSpecificColumns;
         private Button btnMiscQueries;
+        private Button btnVendorsAndInvoices;
     }
 }
